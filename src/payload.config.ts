@@ -10,9 +10,12 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { azureStorage } from '@payloadcms/storage-azure'
+import { setLogLevel } from '@azure/logger'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+setLogLevel('info')
 
 export default buildConfig({
   admin: {

@@ -12,11 +12,10 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
-    "start-next": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "test": "pnpm run test:int && pnpm run test:e2e",
     "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --no-experimental-strip-types\" pnpm exec playwright test",
-    "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts",
-    "start": "pm2 list && pm2 start process.json --no-daemon"
+    "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts"
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "3.49.1",
@@ -32,7 +31,8 @@
     "payload": "3.49.1",
     "react": "19.1.0",
     "react-dom": "^19.1.0",
-    "sharp": "0.34.2"
+    "sharp": "0.34.2",
+    "wtfnode": "^0.10.0"
   },
   "devDependencies": {
     "@playwright/test": "1.54.1",
