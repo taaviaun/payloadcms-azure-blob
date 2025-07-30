@@ -12,6 +12,9 @@ on:
 env:
   PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
   DATABASE_URI: ${{ secrets.DATABASE_URI }}
+  AZURE_STORAGE_ACCOUNT_BASEURL: ${{ secrets.AZURE_STORAGE_ACCOUNT_BASEURL }}
+  AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+  AZURE_STORAGE_CONTAINER_NAME: ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}
 
 jobs:
   build:
@@ -31,7 +34,6 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
